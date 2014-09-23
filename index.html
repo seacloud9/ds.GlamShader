@@ -235,6 +235,8 @@
 				scaleSound		+= offset;
 
 				if(scaleSound > 0){
+					object.rotation.x += 0.005 * scaleSound;
+					object.rotation.y += 0.01 * scaleSound;
 					object.scale.set(scaleSound, scaleSound, scaleSound);
 				}
 
@@ -250,14 +252,15 @@
 					effectBloom.enabled = true;
 					dotScreenPass.enabled = false;
 					rGBShiftPass.enabled = false;
+					object.rotation.x += 0.005;
+					object.rotation.y += 0.01;
 				}
 				
 
 
 				requestAnimationFrame( animate );
 
-				object.rotation.x += 0.005;
-				object.rotation.y += 0.01;
+				
 
 				postprocessor.render();
 				stats.update();
