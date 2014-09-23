@@ -12,7 +12,7 @@ ds.GlamShader
 </div>
 
 <div style="float:left; width:700px; margin-top:20px;">
-	<p>Simple threeJS / GLAM example using shaders, web audio and soundcloud.
+	<p>Simple threeJS / GLAM example using shaders, web audio, processingJS, hypeframework and soundcloud.
 	 </p>
 </div>
 <div style="float:left; width:100%; margin-top:20px;">
