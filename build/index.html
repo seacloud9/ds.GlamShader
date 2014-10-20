@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="ngSoundCloudViz" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@seacloud9">
+    <meta name="twitter:title" content="soundCloudViz">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@seacloud9">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="ngSoundCloudViz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/ngSoundCloudViz" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="AngularJS SoundCloud Demo">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/ngbp-0.3.2.css" />
+
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="vendor/scripts/processing.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/three.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/CSS3DRenderer.js"></script>
+    <script type="text/javascript" src="vendor/scripts/TrackballControls.js"></script>
+    <script type="text/javascript" src="vendor/scripts/stats.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/tween.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/webaudio.min.js"></script>
+    <script type="text/javascript" src="vendor/scripts/CopyShader.js"></script>
+    <script type="text/javascript" src="vendor/scripts/DotScreenShader.js"></script>
+    <script type="text/javascript" src="vendor/scripts/RGBShiftShader.js"></script>
+    <script type="text/javascript" src="vendor/scripts/MirrorShader.js"></script>
+    <script type="text/javascript" src="vendor/scripts/EffectComposer.js"></script>
+    <script type="text/javascript" src="vendor/scripts/RenderPass.js"></script>
+    <script type="text/javascript" src="vendor/scripts/MaskPass.js"></script>
+    <script type="text/javascript" src="vendor/scripts/ShaderPass.js"></script>
+    <script type="text/javascript" src="vendor/scripts/ConvolutionShader.js"></script>
+    <script type="text/javascript" src="vendor/scripts/BloomPass.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/home/home.js"></script>
+    <script type="text/javascript" src="src/app/play/play.js"></script>
+    <script type="text/javascript" src="src/common/plusOne/plusOne.js"></script>
+    <script type="text/javascript" src="templates-common.js"></script>
+    <script type="text/javascript" src="templates-app.js"></script>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <style>
+    #tracksearchInput{
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #0080ff;
+      padding: 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+      -webkit-border-radius: 0px;
+    }
+
+    #submit{
+      color: #0080ff;
+      background-color: transparent;
+      border: 1px solid #0080ff;
+      padding: 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      }
+          
+
+    </style>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>
+  </head>
+  <body style="background:#000">
+    <div>
+    <div class="container">
+
+    <form ng-submit="submit(tracksearch)" id="tracksearch" style="z-index:9999999; position:absolute; top:10px; left:10px;">
+  <input type="text" ng-model="tracksearch" name="tracksearch" id="tracksearchInput" placeholder="st. vincent" />
+  <input type="submit" id="submit" value="Submit"  />
+</form>
+    <div class="container" ui-view="main"></div>
+
+    <footer class="footer" style="display:none">
+      <div class="container">
+        <div class="footer-inner">
+          
+        </div>
+      </div>
+    </footer>
+    </div>
+  </body>
+</html>

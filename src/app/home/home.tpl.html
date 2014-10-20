@@ -1,0 +1,20 @@
+<div style="width:100%; float:left">
+</div>
+<div class="soundscape" style="display:none">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" data-ng-repeat="x in tracks">
+      <div data-id={{x.id}} style="display:block; float: left; width: 700px; background-color:#fff;height: 140px;" class='soundCloudCard' ng-click=goVisualize(x.id) >
+      <div style="width:100%; float:left">
+        <div style="width:20%; float:left;">
+          <img src={{x.user.avatar_url}} style="width:100%; float:left"/>
+        </div>
+        <div style="width:80%; float:left;">
+          <h4><i></i> {{x.title}}</h4>
+           <img src= {{x.waveform_url}} style="width:100%; float:left"/>         
+       </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
